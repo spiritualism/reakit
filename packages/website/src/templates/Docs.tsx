@@ -12,7 +12,7 @@ import {
   P,
   Pre,
   Code
-} from "reakit-system-classic/components";
+} from "reakit-system-bootstrap/components";
 import CoreLayout from "../components/CoreLayout";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/dracula.css";

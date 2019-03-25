@@ -19,7 +19,7 @@ import {
   useDialogState,
   Button
 } from "reakit";
-import { A } from "reakit-system-classic/components";
+import { A } from "reakit-system-bootstrap/components";
 
 function Example() {
   const focusInRef = React.useRef(null);
@@ -83,7 +83,7 @@ import {
   useDialogState,
   Button
 } from "reakit";
-import { A } from "reakit-system-classic/components";
+import { A } from "reakit-system-bootstrap/components";
 
 function Example() {
   const focusInRef = React.useRef(null);

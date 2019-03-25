@@ -1,11 +1,11 @@
-# reakit-system-classic
+# reakit-system-palette
 
-<a href="https://npmjs.org/package/reakit-system-classic"><img alt="NPM version" src="https://img.shields.io/npm/v/reakit-system-classic.svg?style=flat-square" /></a>
+<a href="https://npmjs.org/package/reakit-system-palette"><img alt="NPM version" src="https://img.shields.io/npm/v/reakit-system-palette.svg?style=flat-square" /></a>
 
 ## Installation
 
 ```sh
-npm i reakit-system-classic
+npm i reakit-system-palette
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ npm i reakit-system-classic
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider, Button } from "reakit";
-import system from "reakit-system-classic";
+import system from "reakit-system-palette";
 
 const App = () => (
   <Provider system={system}>

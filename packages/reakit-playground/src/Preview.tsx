@@ -1,7 +1,7 @@
 // TODO: Refactor
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import * as system from "reakit-system-classic";
+import * as system from "reakit-system-bootstrap";
 import { unstable_useId } from "reakit/utils/useId";
 import { Provider } from "reakit/utils/Provider";
 import { compileComponent } from "./__utils/compileComponent";

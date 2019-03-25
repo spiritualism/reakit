@@ -1,13 +1,13 @@
 {
-  "name": "reakit-system-classic",
+  "name": "reakit-system-bootstrap",
   "version": "0.0.1",
-  "description": "Reakit classic system",
+  "description": "Reakit bootstrap system",
   "sideEffects": false,
   "license": "MIT",
-  "repository": "https://github.com/reakit/reakit/tree/master/packages/reakit-system-classic",
+  "repository": "https://github.com/reakit/reakit/tree/master/packages/reakit-system-bootstrap",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "unpkg": "dist/reakit-system-classic.min.js",
+  "unpkg": "dist/reakit-system-bootstrap.min.js",
   "types": "ts",
   "author": {
     "name": "Diego Haz",

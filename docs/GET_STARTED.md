@@ -14,9 +14,9 @@ First, make sure to have `react` and `react-dom` installed:
 npm install --save react react-dom
 ```
 
-Then, install `reakit` and `reakit-system-classic` (optional):
+Then, install `reakit` and `reakit-system-bootstrap` (optional):
 ```sh
-npm install --save reakit reakit-system-classic
+npm install --save reakit reakit-system-bootstrap
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ Play with an example on [CodeSandbox](https://codesandbox.io/s/m4n32vjkoj).
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider, Button } from "reakit";
-import system from "reakit-system-classic";
+import system from "reakit-system-bootstrap";
 
 const App = () => (
   <Provider system={system}>
