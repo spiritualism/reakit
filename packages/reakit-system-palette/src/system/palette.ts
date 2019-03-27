@@ -1,60 +1,96 @@
-import { p } from "../utils/p";
+import { ref } from "../utils/ref";
 
 export const palette = {
-  white: "#ffffff",
-  whiteText: p("black"),
+  white: {
+    color: "#ffffff",
+    contrast: ref("black")
+  },
+
+  whiteText: ref("black"),
 
   black: "#212121",
-  blackText: p("white"),
+  blackText: ref("white"),
 
   // https://coolors.co/2196f3-42a5f5-64b5f6-90caf9-bbdefb
   primary: ["#2196f3", "#42a5f5", "#64b5f6", "#90caf9", "#bbdefb"],
-  primaryText: [p("white"), p("white"), p("black"), p("black"), p("black")],
+  primaryText: [
+    ref("white"),
+    ref("white"),
+    ref("black"),
+    ref("black"),
+    ref("black")
+  ],
 
   // https://coolors.co/e91e63-ec407a-f06292-f48fb1-f8bbd0
   secondary: ["#e91e63", "#ec407a", "#f06292", "#f48fb1", "#f8bbd0"],
-  secondaryText: [p("white"), p("white"), p("black"), p("black"), p("black")],
+  secondaryText: [
+    ref("white"),
+    ref("white"),
+    ref("black"),
+    ref("black"),
+    ref("black")
+  ],
 
   // https://coolors.co/f44336-ef5350-e57373-ef9a9a-ffcdd2
   danger: ["#f44336", "#ef5350", "#e57373", "#ef9a9a", "#ffcdd2"],
-  dangerText: [p("white"), p("white"), p("black"), p("black"), p("black")],
+  dangerText: [
+    ref("white"),
+    ref("white"),
+    ref("black"),
+    ref("black"),
+    ref("black")
+  ],
 
   // https://coolors.co/ffc107-ffca28-ffd54f-ffe082-ffecb3
   alert: ["#ffc107", "#ffca28", "#ffd54f", "#ffe082", "#ffecb3"],
-  alertText: [p("black"), p("black"), p("black"), p("black"), p("black")],
+  alertText: [
+    ref("black"),
+    ref("black"),
+    ref("black"),
+    ref("black"),
+    ref("black")
+  ],
 
   // https://coolors.co/4caf50-66bb6a-81c784-a5d6a7-c8e6c9
   success: ["#4caf50", "#66bb6a", "#81c784", "#a5d6a7", "#c8e6c9"],
-  successText: [p("white"), p("white"), p("white"), p("black"), p("black")],
-
-  grayscale: [
-    p("black"),
-    "#414141",
-    "#616161",
-    "#9e9e9e",
-    "#bdbdbd",
-    "#e0e0e0",
-    "#f5f5f5",
-    p("white")
+  successText: [
+    ref("white"),
+    ref("white"),
+    ref("white"),
+    ref("black"),
+    ref("black")
   ],
+
+  gray: {
+    100: { color: "#f8f9fa", contrast: ref("black") },
+    200: { color: "#e9ecef", contrast: ref("black") },
+    300: { color: "#dee2e6", contrast: ref("black") },
+    400: { color: "#ced4da", contrast: ref("black") },
+    500: { color: "#adb5bd", contrast: ref("black") },
+    600: { color: "#6c757d", contrast: ref("white") },
+    700: { color: "#495057", contrast: ref("white") },
+    800: { color: "#343a40", contrast: ref("white") },
+    900: { color: "#212529", contrast: ref("white") }
+  },
+
   grayscaleText: [
-    p("white"),
-    p("white"),
-    p("white"),
-    p("black"),
-    p("black"),
-    p("black"),
-    p("black"),
-    p("black")
+    ref("white"),
+    ref("white"),
+    ref("white"),
+    ref("black"),
+    ref("black"),
+    ref("black"),
+    ref("black"),
+    ref("black")
   ],
 
   background: [
-    p("grayscale.-4"),
-    p("grayscale.-3"),
-    p("grayscale.-2"),
-    p("grayscale.-1")
+    ref("grayscale.-4"),
+    ref("grayscale.-3"),
+    ref("grayscale.-2"),
+    ref("grayscale.-1")
   ],
-  backgroundText: p("black"),
+  backgroundText: ref("black"),
 
   shadow: [
     "rgba(0, 0, 0, 0.9)",
@@ -65,16 +101,16 @@ export const palette = {
     "rgba(0, 0, 0, 0.075)"
   ],
   shadowText: [
-    p("white"),
-    p("white"),
-    p("white"),
-    p("black"),
-    p("black"),
-    p("black")
+    ref("white"),
+    ref("white"),
+    ref("white"),
+    ref("black"),
+    ref("black"),
+    ref("black")
   ],
 
   transparent: "transparent",
-  transparentText: p("black"),
+  transparentText: ref("black"),
 
-  border: p("shadow.-2")
+  border: ref("shadow.-2")
 };

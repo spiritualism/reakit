@@ -1,2 +1,2 @@
-export * from "./p";
+export * from "./ref";
 export * from "./usePalette";

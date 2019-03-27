@@ -13,11 +13,13 @@ export function useBox(
   { system = {} }: UseBoxOptions,
   htmlProps: unstable_BoxProps = {}
 ) {
-  const color = usePalette(system.color);
-  const bgColor = usePalette(system.bgColor);
+  const text = usePalette(system.color);
+  const bg = usePalette(system.bgColor);
+  const color = text.color || bg.contrast;
+  const backgroundColor = bg.color || text.contrast;
   const style = {
     ...(color ? { color } : {}),
-    ...(bgColor ? { backgroundColor: bgColor } : {})
+    ...(backgroundColor ? { backgroundColor } : {})
   };
   return mergeProps({ style }, htmlProps);
 }

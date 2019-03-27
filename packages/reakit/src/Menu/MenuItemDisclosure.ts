@@ -30,6 +30,7 @@ export function unstable_useMenuItemDisclosure(
 
   if (!parent) {
     // TODO: Better error
+    // Or maybe it could be optional for dialog disclosures
     throw new Error("Missing parent prop");
   }
 

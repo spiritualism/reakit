@@ -1,47 +1,81 @@
-// TODO: Refactor
 import * as React from "react";
 import { useToken } from "reakit/system/useToken";
 
-function toArray<T>(arg: T[] | T) {
-  return Array.isArray(arg) ? arg : [arg];
-}
+// TODO: Function gets paletteSystem as parameter, which avoids calling useContext
+type Color = string | { color: Color; contrast?: Color } | (() => Color);
 
-function clamp(number: number, min: number, max: number) {
-  if (number < min) return min;
-  if (number > max) return max;
-  return number;
-}
+type Shades = {
+  50?: Color;
+  100?: Color;
+  200?: Color;
+  300?: Color;
+  400?: Color;
+  500?: Color;
+  600?: Color;
+  700?: Color;
+  800?: Color;
+  900?: Color;
+};
 
 type Palette = {
-  [key: string]: string | string[] | (() => string) | Array<() => string[]>;
+  [key: string]: Color | Shades | (() => Shades);
 };
+
+function isShades(shades: Palette[string]): shades is Shades {
+  return (
+    typeof shades === "object" &&
+    shades != null &&
+    !("color" in shades) &&
+    !("contrast" in shades)
+  );
+}
+
+function parseColor(
+  color?: Color,
+  fallback?: string
+): { color?: string; contrast?: string } {
+  if (color == null) {
+    return { color: fallback };
+  }
+  if (typeof color === "string") {
+    return { color };
+  }
+  if (typeof color === "function") {
+    return parseColor(color());
+  }
+  return {
+    color: parseColor(color.color).color,
+    contrast: parseColor(color.contrast).color
+  };
+}
+
+function parseShades(
+  shades: Palette[string],
+  level: keyof Shades,
+  fallback?: string
+): { color?: string; contrast?: string } {
+  if (typeof shades === "function") {
+    return parseShades(shades(), level);
+  }
+  return parseColor(isShades(shades) ? shades[level] : shades, fallback);
+}
 
 export function usePalette(
   palette?: string,
   fallback?: string
-): string | undefined {
+): { color?: string; contrast?: string } {
   React.useDebugValue(palette || "(not set)");
-  const palettes = useToken<Palette>("palette");
+  const paletteSystem = useToken<Palette>("palette");
 
-  if (!palette || !palettes) return fallback;
+  // TODO: Warn if no fallback is provided and palette doesn't exist in system
+  if (!palette || !paletteSystem) return { color: fallback };
 
-  const [color, shade = 0] = palette.split(".");
+  const [paletteName, level = 500] = palette.split(".");
 
-  if (!(color in palettes)) return fallback;
+  if (!(paletteName in paletteSystem)) return { color: fallback };
 
-  const intShade = typeof shade === "number" ? shade : parseInt(shade, 10);
+  const intLevel = typeof level === "number" ? level : parseInt(level, 10);
+  const shades = paletteSystem[paletteName];
 
-  const shades = toArray(
-    // @ts-ignore
-    typeof palettes[color] === "function" ? palettes[color]() : palettes[color]
-  );
-  const result =
-    intShade < 0
-      ? shades[clamp(shades.length + intShade, 0, shades.length - 1)]
-      : shades[clamp(intShade, 0, shades.length - 1)];
-
-  if (typeof result === "function") {
-    return result();
-  }
-  return result;
+  return parseShades(shades, intLevel as keyof Shades);
 }

@@ -1,5 +1,5 @@
 import { usePalette } from "./usePalette";
 
-export function p(palette: string, fallback?: string) {
+export function ref(palette: string, fallback?: string) {
   return () => usePalette(palette, fallback);
 }

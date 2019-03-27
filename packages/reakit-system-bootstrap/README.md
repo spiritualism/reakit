@@ -18,7 +18,9 @@ import system from "reakit-system-bootstrap";
 
 const App = () => (
   <Provider system={system}>
-    <Button>Button</Button>
+    <Button system={{ palette: "primary", size: "lg", outline: true }}>
+      Button
+    </Button>
   </Provider>
 );
 
