@@ -23,6 +23,10 @@ function parseShade(
     return { color };
   }
 
+  if (color.color == null) {
+    return {};
+  }
+
   const colorObject = parseShade(palette, color.color, level, fallback);
   const contrastObject =
     color.contrast && parseShade(palette, color.contrast, level, fallback);

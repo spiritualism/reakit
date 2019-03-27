@@ -1,6 +1,6 @@
 export type Color =
   | string
-  | { color: Color; contrast?: Color }
+  | { color?: Color; contrast?: Color }
   | ((palette: Palette) => Color);
 
 export type ShadesObject = {
