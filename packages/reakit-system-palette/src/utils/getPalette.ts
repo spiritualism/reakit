@@ -12,23 +12,23 @@ function isShades(shades: Palette[string]): shades is Shades {
 function parseShade(
   palette: Palette,
   shades: Palette[string],
-  level: keyof Shades,
+  level: keyof Shades = 500,
   fallback?: string
 ): { color?: string; contrast?: string } {
   if (typeof shades === "function") {
-    return parseShade(palette, shades(palette), level, fallback);
+    return parseShade(palette, shades(palette), undefined, fallback);
   }
 
   const color = isShades(shades) ? shades[level] : shades;
 
+  if (typeof color === "function") {
+    return parseShade(palette, color(palette), undefined, fallback);
+  }
   if (color == null) {
     return { color: fallback };
   }
   if (typeof color === "string") {
     return { color };
-  }
-  if (typeof color === "function") {
-    return parseShade(palette, color(palette), level, fallback);
   }
 
   const colorObject = parseShade(palette, color.color, level, fallback);

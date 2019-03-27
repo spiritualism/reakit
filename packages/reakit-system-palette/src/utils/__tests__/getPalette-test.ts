@@ -142,3 +142,14 @@ test("shades with dot name fallback", () => {
     color: "b"
   });
 });
+
+test("shades with function", () => {
+  expect(
+    getPalette(
+      { a: { 300: palette => palette.b as any }, b: { 500: "blue" } },
+      "a.300"
+    )
+  ).toEqual({
+    color: "blue"
+  });
+});
