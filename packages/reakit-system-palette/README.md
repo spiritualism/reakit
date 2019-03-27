@@ -38,7 +38,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 ### Creating your own palette
 
 ```jsx
-import { shades, ref, fill } from "reakit-system-palette/utils";
+import { shades, ref } from "reakit-system-palette/utils";
 
 const system = {
   palette: {
@@ -49,7 +49,7 @@ const system = {
     secondary: shades(ref("green")),
     gray: shades({
       500: ref("green"),
-      contrast: fill("#000")
+      contrast: "#000"
     })
   }
 };
