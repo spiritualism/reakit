@@ -1,18 +1,10 @@
-import { Shades, Palette } from "./__types";
-
-function isShades(shades: Palette[string]): shades is Shades {
-  return (
-    typeof shades === "object" &&
-    shades != null &&
-    !("color" in shades) &&
-    !("contrast" in shades)
-  );
-}
+import { Shades, Palette, Color, ShadesObject } from "./__types";
+import { isShades } from "./__isShades";
 
 function parseShade(
   palette: Palette,
-  shades: Palette[string],
-  level: keyof Shades = 500,
+  shades: Color | Shades,
+  level: keyof ShadesObject = 500,
   fallback?: string
 ): { color?: string; contrast?: string } {
   if (typeof shades === "function") {

@@ -3,8 +3,7 @@ export type Color =
   | { color: Color; contrast?: Color }
   | ((palette: Palette) => Color);
 
-export type Shades = {
-  50?: Color;
+export type ShadesObject = {
   100?: Color;
   200?: Color;
   300?: Color;
@@ -16,6 +15,8 @@ export type Shades = {
   900?: Color;
 };
 
+export type Shades = ShadesObject | ((palette: Palette) => Shades);
+
 export type Palette = {
-  [key: string]: Color | Shades | ((palette: Palette) => Shades);
+  [key: string]: Color | Shades;
 };

@@ -14,6 +14,7 @@
     "noUnusedParameters": true,
     "stripInternal": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
     "paths": {
       "reakit/*": ["./node_modules/reakit/src/*"],
       "reakit-system-palette/*": ["./node_modules/reakit-system-palette/src/*"],
