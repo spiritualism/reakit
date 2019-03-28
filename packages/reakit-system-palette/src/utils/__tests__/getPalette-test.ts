@@ -126,18 +126,18 @@ test("shades with color with contrast", () => {
   });
 });
 
-test("shades with dot name", () => {
+test("shades with level", () => {
   expect(
-    getPalette({ a: { 200: { color: "blue", contrast: "red" } } }, "a.200")
+    getPalette({ a: { 200: { color: "blue", contrast: "red" } } }, "a-200")
   ).toEqual({
     color: "blue",
     contrast: "red"
   });
 });
 
-test("shades with dot name fallback", () => {
+test("shades with level fallback", () => {
   expect(
-    getPalette({ a: { 200: { color: "blue", contrast: "red" } } }, "a.300", "b")
+    getPalette({ a: { 200: { color: "blue", contrast: "red" } } }, "a-300", "b")
   ).toEqual({
     color: "b"
   });
@@ -147,7 +147,7 @@ test("shades with function", () => {
   expect(
     getPalette(
       { a: { 300: palette => palette.b as any }, b: { 500: "blue" } },
-      "a.300"
+      "a-300"
     )
   ).toEqual({
     color: "blue"

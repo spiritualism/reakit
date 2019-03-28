@@ -1,7 +1,7 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { useLiveRef } from "../__utils/useLiveRef";
 import { Keys } from "../__utils/types";
@@ -94,7 +94,7 @@ export function useTabbable(
   );
 
   htmlProps = useBox(allOptions, htmlProps);
-  htmlProps = useHook("useTabbable", allOptions, htmlProps);
+  htmlProps = unstable_useHook("useTabbable", allOptions, htmlProps);
   return htmlProps;
 }
 

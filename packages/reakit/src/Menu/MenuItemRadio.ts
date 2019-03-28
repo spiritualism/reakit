@@ -1,6 +1,6 @@
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_RadioOptions,
   unstable_RadioProps,
@@ -67,7 +67,7 @@ export function unstable_useMenuItemRadio(
     { ...options, currentValue, setValue },
     htmlProps
   );
-  htmlProps = useHook("useMenuItemRadio", options, htmlProps);
+  htmlProps = unstable_useHook("useMenuItemRadio", options, htmlProps);
   return htmlProps;
 }
 

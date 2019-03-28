@@ -17,8 +17,8 @@ import { Provider, Button } from "reakit";
 import system from "reakit-system-bootstrap";
 
 const App = () => (
-  <Provider system={system}>
-    <Button system={{ palette: "primary", size: "lg", outline: true }}>
+  <Provider unstable_system={system}>
+    <Button unstable_system={{ palette: "primary", size: "lg", outline: true }}>
       Button
     </Button>
   </Provider>

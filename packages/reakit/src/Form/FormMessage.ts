@@ -1,5 +1,5 @@
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
 import { As, PropsWithAs, Keys } from "../__utils/types";
@@ -48,7 +48,7 @@ export function unstable_useFormMessage<V, P extends DeepPath<V, P>>(
   );
 
   htmlProps = useBox(options, htmlProps);
-  htmlProps = useHook("useFormMessage", options, htmlProps);
+  htmlProps = unstable_useHook("useFormMessage", options, htmlProps);
   return htmlProps;
 }
 

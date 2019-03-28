@@ -3,8 +3,10 @@
 export default {
   "reakit-system-bootstrap": require("reakit-system-bootstrap"),
   "reakit-system-bootstrap/utils/usePalette": require("reakit-system-bootstrap/utils/usePalette"),
-  "reakit-system-bootstrap/utils/p": require("reakit-system-bootstrap/utils/p"),
+  "reakit-system-bootstrap/utils/shades": require("reakit-system-bootstrap/utils/shades"),
+  "reakit-system-bootstrap/utils/ref": require("reakit-system-bootstrap/utils/ref"),
   "reakit-system-bootstrap/utils": require("reakit-system-bootstrap/utils"),
+  "reakit-system-bootstrap/utils/getPalette": require("reakit-system-bootstrap/utils/getPalette"),
   "reakit-system-bootstrap/system/useBox": require("reakit-system-bootstrap/system/useBox"),
   "reakit-system-bootstrap/system": require("reakit-system-bootstrap/system"),
   "reakit-system-bootstrap/components": require("reakit-system-bootstrap/components"),

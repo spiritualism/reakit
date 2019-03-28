@@ -1,11 +1,5 @@
-// import { renderHook } from "react-hooks-testing-library";
-// import { unstable_useId, unstable_IdProvider } from "../useId";
+import { ref } from "../ref";
 
-// test("useId", () => {
-//   const { result } = renderHook(unstable_useId, {
-//     wrapper: unstable_IdProvider
-//   });
-//   expect(result.current).toBe("id-1");
-// });
-
-test("noop", () => {});
+test("ref", () => {
+  expect(ref("a")({ a: "b" })).toEqual({ color: "b" });
+});

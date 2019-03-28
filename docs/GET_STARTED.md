@@ -27,10 +27,10 @@ Play with an example on [CodeSandbox](https://codesandbox.io/s/m4n32vjkoj).
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider, Button } from "reakit";
-import system from "reakit-system-bootstrap";
+import * as system from "reakit-system-bootstrap";
 
 const App = () => (
-  <Provider system={system}>
+  <Provider unstable_system={system}>
     <Button>Button</Button>
   </Provider>
 );

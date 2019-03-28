@@ -2,21 +2,20 @@ import { unstable_BoxProps } from "reakit/Box/Box";
 import { mergeProps } from "reakit/utils/mergeProps";
 import { usePalette } from "../utils/usePalette";
 
-export type UseBoxOptions = {
-  system: {
-    color?: string;
-    bgColor?: string;
+type SystemBoxOptions = {
+  unstable_system: {
+    palette?: string;
+    opaque?: boolean;
   };
 };
 
 export function useBox(
-  { system = {} }: UseBoxOptions,
+  { unstable_system: system = {} }: SystemBoxOptions,
   htmlProps: unstable_BoxProps = {}
 ) {
-  const text = usePalette(system.color);
-  const bg = usePalette(system.bgColor);
-  const color = text.color || bg.contrast;
-  const backgroundColor = bg.color || text.contrast;
+  const palette = usePalette(system.palette);
+  const color = system.opaque ? palette.contrast : palette.color;
+  const backgroundColor = system.opaque ? palette.color : undefined;
   const style = {
     ...(color ? { color } : {}),
     ...(backgroundColor ? { backgroundColor } : {})

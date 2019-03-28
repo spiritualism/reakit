@@ -1,6 +1,6 @@
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_HiddenOptions,
   unstable_HiddenProps,
@@ -36,7 +36,7 @@ export function useTabPanel(
     htmlProps
   );
   htmlProps = useHidden(allOptions, htmlProps);
-  htmlProps = useHook("useTabPanel", allOptions, htmlProps);
+  htmlProps = unstable_useHook("useTabPanel", allOptions, htmlProps);
   return htmlProps;
 }
 

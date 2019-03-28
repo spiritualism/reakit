@@ -1,6 +1,6 @@
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_PopoverDisclosureOptions,
   unstable_PopoverDisclosureProps,
@@ -51,7 +51,7 @@ export function useMenuDisclosure(
   );
 
   htmlProps = usePopoverDisclosure(options, htmlProps);
-  htmlProps = useHook("useMenuDisclosure", options, htmlProps);
+  htmlProps = unstable_useHook("useMenuDisclosure", options, htmlProps);
   return htmlProps;
 }
 

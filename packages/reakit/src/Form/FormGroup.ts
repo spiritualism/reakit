@@ -1,6 +1,6 @@
 import * as React from "react";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import { mergeProps } from "../utils/mergeProps";
 import { As, PropsWithAs, Keys } from "../__utils/types";
 import { unstable_createComponent } from "../utils/createComponent";
@@ -40,7 +40,7 @@ export function unstable_useFormGroup<V, P extends DeepPath<V, P>>(
   );
 
   htmlProps = useBox(options, htmlProps);
-  htmlProps = useHook("useFormGroup", options, htmlProps);
+  htmlProps = unstable_useHook("useFormGroup", options, htmlProps);
   return htmlProps;
 }
 

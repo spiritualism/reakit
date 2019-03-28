@@ -3,7 +3,7 @@ import { warning } from "../__utils/warning";
 import { unstable_createComponent } from "../utils/createComponent";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
 import { mergeProps } from "../utils/mergeProps";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import { Portal } from "../Portal/Portal";
 import {
   unstable_HiddenOptions,
@@ -174,7 +174,7 @@ export function useDialog(
   );
 
   htmlProps = useHidden(allOptions, htmlProps);
-  htmlProps = useHook("useDialog", allOptions, htmlProps);
+  htmlProps = unstable_useHook("useDialog", allOptions, htmlProps);
   return htmlProps;
 }
 

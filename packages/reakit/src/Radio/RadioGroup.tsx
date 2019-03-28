@@ -1,6 +1,6 @@
 import * as React from "react";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
@@ -28,7 +28,7 @@ export function useRadioGroup(
     htmlProps
   );
   htmlProps = useBox(options, htmlProps);
-  htmlProps = useHook("useRadioGroup", options, htmlProps);
+  htmlProps = unstable_useHook("useRadioGroup", options, htmlProps);
   return htmlProps;
 }
 

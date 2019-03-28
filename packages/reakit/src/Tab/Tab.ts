@@ -1,6 +1,6 @@
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_RoverOptions,
   unstable_RoverProps,
@@ -50,7 +50,7 @@ export function useTab(
   );
 
   htmlProps = useRover(allOptions, htmlProps);
-  htmlProps = useHook("useTab", allOptions, htmlProps);
+  htmlProps = unstable_useHook("useTab", allOptions, htmlProps);
   return htmlProps;
 }
 

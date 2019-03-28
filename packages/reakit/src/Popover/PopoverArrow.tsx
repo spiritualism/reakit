@@ -1,7 +1,7 @@
 import * as React from "react";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { Keys } from "../__utils/types";
 import { usePopoverState, unstable_PopoverStateReturn } from "./PopoverState";
@@ -53,7 +53,7 @@ export function usePopoverArrow(
     htmlProps
   );
   htmlProps = useBox(options, htmlProps);
-  htmlProps = useHook("usePopoverArrow", options, htmlProps);
+  htmlProps = unstable_useHook("usePopoverArrow", options, htmlProps);
   return htmlProps;
 }
 

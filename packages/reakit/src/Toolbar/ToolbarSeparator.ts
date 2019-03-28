@@ -1,5 +1,5 @@
 import { unstable_createComponent } from "../utils/createComponent";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_SeparatorOptions,
   unstable_SeparatorProps,
@@ -18,7 +18,7 @@ export function useToolbarSeparator(
   htmlProps: unstable_ToolbarSeparatorProps = {}
 ) {
   htmlProps = useSeparator(options, htmlProps);
-  htmlProps = useHook("useToolbarSeparator", options, htmlProps);
+  htmlProps = unstable_useHook("useToolbarSeparator", options, htmlProps);
   return htmlProps;
 }
 

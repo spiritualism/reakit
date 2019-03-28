@@ -51,7 +51,7 @@ export function Preview(props: PreviewProps) {
         const exampleComponent = compileComponent(props.code);
         unmount();
         ReactDOM.render(
-          <Provider system={system} prefix={`${prefix}-`}>
+          <Provider unstable_system={system} prefix={`${prefix}-`}>
             {exampleComponent}
           </Provider>,
           ref.current
@@ -68,7 +68,7 @@ export function Preview(props: PreviewProps) {
     <ErrorBoundary>
       {error && <ErrorMessage error={error} />}
       <div ref={ref} style={{ padding: 50 }}>
-        <Provider system={system} prefix={`${prefix}-`}>
+        <Provider unstable_system={system} prefix={`${prefix}-`}>
           {rendered}
         </Provider>
       </div>

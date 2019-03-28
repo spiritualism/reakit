@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_TabbableOptions,
   unstable_TabbableProps,
@@ -83,7 +83,7 @@ export function useCheckbox(
     htmlProps
   );
   htmlProps = useTabbable(options, htmlProps);
-  htmlProps = useHook("useCheckbox", options, htmlProps);
+  htmlProps = unstable_useHook("useCheckbox", options, htmlProps);
   return htmlProps;
 }
 

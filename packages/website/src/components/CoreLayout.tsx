@@ -22,7 +22,7 @@ import * as system from "reakit-system-palette";
 function CoreLayout(props: { children: React.ReactNode }) {
   return (
     <React.StrictMode>
-      <Provider system={system}>{props.children}</Provider>
+      <Provider unstable_system={system}>{props.children}</Provider>
     </React.StrictMode>
   );
 }

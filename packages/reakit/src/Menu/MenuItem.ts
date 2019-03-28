@@ -1,6 +1,6 @@
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_RoverOptions,
   unstable_RoverProps,
@@ -66,7 +66,7 @@ export function useMenuItem(
   );
 
   htmlProps = useRover(allOptions, htmlProps);
-  htmlProps = useHook("useMenuItem", allOptions, htmlProps);
+  htmlProps = unstable_useHook("useMenuItem", allOptions, htmlProps);
   return htmlProps;
 }
 

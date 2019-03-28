@@ -3,8 +3,10 @@
 export default {
   "reakit-system-palette": require("reakit-system-palette"),
   "reakit-system-palette/utils/usePalette": require("reakit-system-palette/utils/usePalette"),
-  "reakit-system-palette/utils/p": require("reakit-system-palette/utils/p"),
+  "reakit-system-palette/utils/shades": require("reakit-system-palette/utils/shades"),
+  "reakit-system-palette/utils/ref": require("reakit-system-palette/utils/ref"),
   "reakit-system-palette/utils": require("reakit-system-palette/utils"),
+  "reakit-system-palette/utils/getPalette": require("reakit-system-palette/utils/getPalette"),
   "reakit-system-palette/system/useBox": require("reakit-system-palette/system/useBox"),
   "reakit-system-palette/system/palette": require("reakit-system-palette/system/palette"),
   "reakit-system-palette/system": require("reakit-system-palette/system")

@@ -6,60 +6,82 @@ export const palette = {
     contrast: ref("black")
   },
 
-  whiteText: ref("black"),
+  black: {
+    color: "#212121",
+    contrast: ref("white")
+  },
 
-  black: "#212121",
-  blackText: ref("white"),
+  primary: {
+    100: { color: "#CCE5FF", contrast: ref("black") },
+    200: { color: "#99CAFF", contrast: ref("black") },
+    300: { color: "#66B0FF", contrast: ref("black") },
+    400: { color: "#3395FF", contrast: ref("white") },
+    500: { color: "#007BFF", contrast: ref("white") },
+    600: { color: "#0062CC", contrast: ref("white") },
+    700: { color: "#004A99", contrast: ref("white") },
+    800: { color: "#003166", contrast: ref("white") },
+    900: { color: "#001933", contrast: ref("white") }
+  },
 
-  // https://coolors.co/2196f3-42a5f5-64b5f6-90caf9-bbdefb
-  primary: ["#2196f3", "#42a5f5", "#64b5f6", "#90caf9", "#bbdefb"],
-  primaryText: [
-    ref("white"),
-    ref("white"),
-    ref("black"),
-    ref("black"),
-    ref("black")
-  ],
+  secondary: {
+    100: { color: "#CED2D5", contrast: ref("black") },
+    200: { color: "#B5BBBF", contrast: ref("black") },
+    300: { color: "#9CA3AA", contrast: ref("black") },
+    400: { color: "#838C94", contrast: ref("black") },
+    500: { color: "#6C757D", contrast: ref("white") },
+    600: { color: "#565E64", contrast: ref("white") },
+    700: { color: "#41464B", contrast: ref("white") },
+    800: { color: "#2B2F32", contrast: ref("white") },
+    900: { color: "#161719", contrast: ref("white") }
+  },
 
-  // https://coolors.co/e91e63-ec407a-f06292-f48fb1-f8bbd0
-  secondary: ["#e91e63", "#ec407a", "#f06292", "#f48fb1", "#f8bbd0"],
-  secondaryText: [
-    ref("white"),
-    ref("white"),
-    ref("black"),
-    ref("black"),
-    ref("black")
-  ],
+  success: {
+    100: { color: "#90E4A3", contrast: ref("black") },
+    200: { color: "#6FDC88", contrast: ref("black") },
+    300: { color: "#4DD46C", contrast: ref("black") },
+    400: { color: "#30C853", contrast: ref("black") },
+    500: { color: "#28A745", contrast: ref("white") },
+    600: { color: "#208637", contrast: ref("white") },
+    700: { color: "#186429", contrast: ref("white") },
+    800: { color: "#10431C", contrast: ref("white") },
+    900: { color: "#08210E", contrast: ref("white") }
+  },
 
-  // https://coolors.co/f44336-ef5350-e57373-ef9a9a-ffcdd2
-  danger: ["#f44336", "#ef5350", "#e57373", "#ef9a9a", "#ffcdd2"],
-  dangerText: [
-    ref("white"),
-    ref("white"),
-    ref("black"),
-    ref("black"),
-    ref("black")
-  ],
+  info: {
+    100: { color: "#85E1F0", contrast: ref("black") },
+    200: { color: "#60D8EB", contrast: ref("black") },
+    300: { color: "#3BCFE7", contrast: ref("black") },
+    400: { color: "#1CC2DD", contrast: ref("black") },
+    500: { color: "#17A2B8", contrast: ref("black") },
+    600: { color: "#128293", contrast: ref("black") },
+    700: { color: "#0E616E", contrast: ref("black") },
+    800: { color: "#09414A", contrast: ref("black") },
+    900: { color: "#052025", contrast: ref("black") }
+  },
 
-  // https://coolors.co/ffc107-ffca28-ffd54f-ffe082-ffecb3
-  alert: ["#ffc107", "#ffca28", "#ffd54f", "#ffe082", "#ffecb3"],
-  alertText: [
-    ref("black"),
-    ref("black"),
-    ref("black"),
-    ref("black"),
-    ref("black")
-  ],
+  warning: {
+    100: { color: "#FFF5D9", contrast: ref("black") },
+    200: { color: "#FFE8A4", contrast: ref("black") },
+    300: { color: "#FFDB70", contrast: ref("black") },
+    400: { color: "#FFCE3B", contrast: ref("black") },
+    500: { color: "#FFC107", contrast: ref("black") },
+    600: { color: "#D29D00", contrast: ref("black") },
+    700: { color: "#9D7600", contrast: ref("white") },
+    800: { color: "#694F00", contrast: ref("white") },
+    900: { color: "#342700", contrast: ref("white") }
+  },
 
-  // https://coolors.co/4caf50-66bb6a-81c784-a5d6a7-c8e6c9
-  success: ["#4caf50", "#66bb6a", "#81c784", "#a5d6a7", "#c8e6c9"],
-  successText: [
-    ref("white"),
-    ref("white"),
-    ref("white"),
-    ref("black"),
-    ref("black")
-  ],
+  danger: {
+    100: { color: "#FCEFF0", contrast: ref("black") },
+    200: { color: "#F4C1C6", contrast: ref("black") },
+    300: { color: "#EC929B", contrast: ref("black") },
+    400: { color: "#E46470", contrast: ref("black") },
+    500: { color: "#DC3545", contrast: ref("white") },
+    600: { color: "#BA202F", contrast: ref("white") },
+    700: { color: "#8C1823", contrast: ref("white") },
+    800: { color: "#5D1017", contrast: ref("white") },
+    900: { color: "#2F080C", contrast: ref("white") }
+  },
 
   gray: {
     100: { color: "#f8f9fa", contrast: ref("black") },
@@ -71,46 +93,5 @@ export const palette = {
     700: { color: "#495057", contrast: ref("white") },
     800: { color: "#343a40", contrast: ref("white") },
     900: { color: "#212529", contrast: ref("white") }
-  },
-
-  grayscaleText: [
-    ref("white"),
-    ref("white"),
-    ref("white"),
-    ref("black"),
-    ref("black"),
-    ref("black"),
-    ref("black"),
-    ref("black")
-  ],
-
-  background: [
-    ref("grayscale.-4"),
-    ref("grayscale.-3"),
-    ref("grayscale.-2"),
-    ref("grayscale.-1")
-  ],
-  backgroundText: ref("black"),
-
-  shadow: [
-    "rgba(0, 0, 0, 0.9)",
-    "rgba(0, 0, 0, 0.7)",
-    "rgba(0, 0, 0, 0.5)",
-    "rgba(0, 0, 0, 0.3)",
-    "rgba(0, 0, 0, 0.15)",
-    "rgba(0, 0, 0, 0.075)"
-  ],
-  shadowText: [
-    ref("white"),
-    ref("white"),
-    ref("white"),
-    ref("black"),
-    ref("black"),
-    ref("black")
-  ],
-
-  transparent: "transparent",
-  transparentText: ref("black"),
-
-  border: ref("shadow.-2")
+  }
 };

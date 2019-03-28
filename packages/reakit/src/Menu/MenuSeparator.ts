@@ -1,5 +1,5 @@
 import { unstable_createComponent } from "../utils/createComponent";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_SeparatorOptions,
   unstable_SeparatorProps,
@@ -18,7 +18,7 @@ export function useMenuSeparator(
   htmlProps: unstable_MenuSeparatorProps = {}
 ) {
   htmlProps = useSeparator(options, htmlProps);
-  htmlProps = useHook("useMenuSeparator", options, htmlProps);
+  htmlProps = unstable_useHook("useMenuSeparator", options, htmlProps);
   return htmlProps;
 }
 

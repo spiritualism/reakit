@@ -3,7 +3,7 @@ import { warning } from "../__utils/warning";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import { Portal } from "../Portal/Portal";
 import {
   unstable_PopoverOptions,
@@ -39,7 +39,7 @@ export function useMenu(
   htmlProps = mergeProps({ role: "menu" } as typeof htmlProps, htmlProps);
   htmlProps = unstable_useStaticMenu(allOptions, htmlProps);
   htmlProps = usePopover(allOptions, htmlProps);
-  htmlProps = useHook("useMenu", allOptions, htmlProps);
+  htmlProps = unstable_useHook("useMenu", allOptions, htmlProps);
   return htmlProps;
 }
 

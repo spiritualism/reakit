@@ -2,7 +2,7 @@ import * as React from "react";
 import { As, PropsWithAs, ArrayValue, Omit, Keys } from "../__utils/types";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_CheckboxOptions,
   unstable_CheckboxProps,
@@ -61,7 +61,7 @@ export function unstable_useFormCheckbox<V, P extends DeepPath<V, P>>(
   );
 
   htmlProps = useCheckbox({ ...options, currentValue, setValue }, htmlProps);
-  htmlProps = useHook("useFormCheckbox", options, htmlProps);
+  htmlProps = unstable_useHook("useFormCheckbox", options, htmlProps);
   return htmlProps;
 }
 

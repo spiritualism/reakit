@@ -1,7 +1,7 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { Keys } from "../__utils/types";
 import { unstable_FormStateReturn, unstable_useFormState } from "./FormState";
@@ -30,7 +30,7 @@ export function unstable_useForm(
   );
 
   htmlProps = useBox(options, htmlProps);
-  htmlProps = useHook("useForm", options, htmlProps);
+  htmlProps = unstable_useHook("useForm", options, htmlProps);
   return htmlProps;
 }
 

@@ -4,7 +4,7 @@ import {
   unstable_TabbableProps,
   useTabbable
 } from "../Tabbable/Tabbable";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_useId } from "../utils/useId";
@@ -98,7 +98,7 @@ export function useRover(
   );
 
   htmlProps = useTabbable(options, htmlProps);
-  htmlProps = useHook("useRover", options, htmlProps);
+  htmlProps = unstable_useHook("useRover", options, htmlProps);
   return htmlProps;
 }
 

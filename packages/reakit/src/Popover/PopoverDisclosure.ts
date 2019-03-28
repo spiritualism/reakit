@@ -1,6 +1,6 @@
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_DialogDisclosureOptions,
   unstable_DialogDisclosureProps,
@@ -25,7 +25,7 @@ export function usePopoverDisclosure(
     htmlProps
   );
   htmlProps = useDialogDisclosure(options, htmlProps);
-  htmlProps = useHook("usePopoverDisclosure", options, htmlProps);
+  htmlProps = unstable_useHook("usePopoverDisclosure", options, htmlProps);
   return htmlProps;
 }
 

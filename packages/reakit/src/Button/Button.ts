@@ -1,7 +1,7 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import {
   unstable_TabbableOptions,
   unstable_TabbableProps,
@@ -32,7 +32,7 @@ export function useButton(
   );
 
   htmlProps = useTabbable(allOptions, htmlProps);
-  htmlProps = useHook("useButton", allOptions, htmlProps);
+  htmlProps = unstable_useHook("useButton", allOptions, htmlProps);
   return htmlProps;
 }
 

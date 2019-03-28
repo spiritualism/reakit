@@ -1,7 +1,7 @@
 import * as React from "react";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
-import { useHook } from "../system/useHook";
+import { unstable_useHook } from "../system/useHook";
 import { unstable_CheckboxOptions, useCheckbox } from "../Checkbox/Checkbox";
 import { Keys } from "../__utils/types";
 import {
@@ -39,7 +39,7 @@ export function unstable_useMenuItemCheckbox(
 
   htmlProps = useCheckbox({ ...options, currentValue, setValue }, htmlProps);
   htmlProps = useMenuItem(options, htmlProps);
-  htmlProps = useHook("useMenuItemCheckbox", options, htmlProps);
+  htmlProps = unstable_useHook("useMenuItemCheckbox", options, htmlProps);
   return htmlProps;
 }
 
