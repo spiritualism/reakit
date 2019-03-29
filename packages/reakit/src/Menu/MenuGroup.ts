@@ -1,6 +1,7 @@
 import * as React from "react";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { Keys } from "../__utils/types";
@@ -16,6 +17,8 @@ export function useMenuGroup(
   options: unstable_MenuGroupOptions,
   htmlProps: unstable_MenuGroupProps = {}
 ) {
+  options = unstable_useOptions("useMenuGroup", options, htmlProps);
+
   htmlProps = mergeProps(
     {
       role: "group"

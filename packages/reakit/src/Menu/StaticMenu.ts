@@ -2,6 +2,7 @@ import { warning } from "../__utils/warning";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { Keys } from "../__utils/types";
@@ -21,6 +22,8 @@ export function unstable_useStaticMenu(
   options: unstable_StaticMenuOptions,
   htmlProps: unstable_StaticMenuProps = {}
 ) {
+  options = unstable_useOptions("useStaticMenu", options, htmlProps);
+
   const onKeyDown = useShortcuts(options);
 
   const ariaOwns = options.unstable_stops

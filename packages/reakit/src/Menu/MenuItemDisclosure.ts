@@ -1,6 +1,7 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { Keys } from "../__utils/types";
 import { useMenuItem } from "./MenuItem";
@@ -25,6 +26,8 @@ export function unstable_useMenuItemDisclosure(
   { stopId, ...options }: unstable_MenuItemDisclosureOptions,
   htmlProps: unstable_MenuItemDisclosureProps = {}
 ) {
+  options = unstable_useOptions("useMenuItemDisclosure", options, htmlProps);
+
   const ref = React.useRef<HTMLElement>(null);
   const { unstable_parent: parent } = options;
 

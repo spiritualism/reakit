@@ -2,6 +2,7 @@ import { warning } from "../__utils/warning";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { Keys } from "../__utils/types";
@@ -16,6 +17,7 @@ export function useToolbar(
   options: unstable_ToolbarOptions,
   htmlProps: unstable_ToolbarProps = {}
 ) {
+  options = unstable_useOptions("useToolbar", options, htmlProps);
   htmlProps = mergeProps(
     {
       role: "toolbar",

@@ -1,5 +1,6 @@
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import {
   useButton,
@@ -19,6 +20,7 @@ export function useHiddenDisclosure(
   options: unstable_HiddenDisclosureOptions,
   htmlProps: unstable_HiddenDisclosureProps = {}
 ) {
+  options = unstable_useOptions("useHiddenDisclosure", options, htmlProps);
   htmlProps = mergeProps(
     {
       onClick: options.toggle,

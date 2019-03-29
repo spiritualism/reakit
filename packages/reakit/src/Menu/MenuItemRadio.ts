@@ -1,5 +1,6 @@
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import {
   unstable_RadioOptions,
@@ -22,6 +23,8 @@ export function unstable_useMenuItemRadio(
   options: unstable_MenuItemRadioOptions,
   htmlProps: unstable_MenuItemRadioProps = {}
 ) {
+  options = unstable_useOptions("useMenuItemRadio", options, htmlProps);
+
   const currentValue = options.unstable_values[options.name];
   const setValue = (value: any) => options.unstable_update(options.name, value);
 

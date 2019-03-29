@@ -1,5 +1,6 @@
 import * as React from "react";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
@@ -21,6 +22,7 @@ export function useRadioGroup(
   options: unstable_RadioGroupOptions = {},
   htmlProps: unstable_RadioGroupProps = {}
 ) {
+  options = unstable_useOptions("useRadioGroup", options, htmlProps);
   htmlProps = mergeProps(
     {
       role: "radiogroup"

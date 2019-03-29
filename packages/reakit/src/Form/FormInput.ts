@@ -2,6 +2,7 @@ import * as React from "react";
 import { As, PropsWithAs, Keys } from "../__utils/types";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { DeepPath } from "./__utils/types";
@@ -33,6 +34,8 @@ export function unstable_useFormInput<V, P extends DeepPath<V, P>>(
   options: unstable_FormInputOptions<V, P>,
   htmlProps: unstable_FormInputProps = {}
 ) {
+  options = unstable_useOptions("useFormInput", options, htmlProps);
+
   htmlProps = mergeProps(
     {
       id: getInputId(options.name, options.baseId),

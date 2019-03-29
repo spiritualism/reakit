@@ -3,6 +3,7 @@ import {
   unstable_ButtonProps,
   useButton
 } from "../Button/Button";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
@@ -20,6 +21,8 @@ export function unstable_useFormSubmitButton(
   options: unstable_FormSubmitButtonOptions,
   htmlProps: unstable_FormSubmitButtonProps = {}
 ) {
+  options = unstable_useOptions("useFormSubmitButton", options, htmlProps);
+
   htmlProps = mergeProps(
     {
       type: "submit",

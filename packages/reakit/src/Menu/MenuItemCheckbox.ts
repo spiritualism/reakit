@@ -1,6 +1,7 @@
 import * as React from "react";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_CheckboxOptions, useCheckbox } from "../Checkbox/Checkbox";
 import { Keys } from "../__utils/types";
@@ -26,6 +27,8 @@ export function unstable_useMenuItemCheckbox(
   options: unstable_MenuItemCheckboxOptions,
   htmlProps: unstable_MenuItemCheckboxProps = {}
 ) {
+  options = unstable_useOptions("useMenuItemCheckbox", options, htmlProps);
+
   const currentValue = options.unstable_values[options.name];
   const setValue = (value: any) => options.unstable_update(options.name, value);
 

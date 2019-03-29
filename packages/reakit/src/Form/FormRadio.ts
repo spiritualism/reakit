@@ -5,6 +5,7 @@ import {
   unstable_RadioProps,
   unstable_useRadio
 } from "../Radio/Radio";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
@@ -33,6 +34,8 @@ export function unstable_useFormRadio<V, P extends DeepPath<V, P>>(
   options: unstable_FormRadioOptions<V, P>,
   htmlProps: unstable_FormRadioProps = {}
 ) {
+  options = unstable_useOptions("useFormRadio", options, htmlProps);
+
   const rover = React.useContext(FormRadioGroupContext);
 
   if (!rover) {

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import {
   unstable_RoverOptions,
@@ -32,6 +33,8 @@ export function unstable_useRadio(
   options: unstable_RadioOptions,
   htmlProps: unstable_RadioProps = {}
 ) {
+  options = unstable_useOptions("useRadio", options, htmlProps);
+
   const checked =
     typeof options.checked !== "undefined"
       ? options.checked

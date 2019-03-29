@@ -1,5 +1,6 @@
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import {
   unstable_DialogDisclosureOptions,
@@ -18,6 +19,7 @@ export function usePopoverDisclosure(
   options: unstable_PopoverDisclosureOptions,
   htmlProps: unstable_PopoverDisclosureProps = {}
 ) {
+  options = unstable_useOptions("usePopoverDisclosure", options, htmlProps);
   htmlProps = mergeProps(
     {
       ref: options.unstable_referenceRef

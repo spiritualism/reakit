@@ -1,4 +1,5 @@
 import { unstable_createComponent } from "../utils/createComponent";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import {
   unstable_SeparatorOptions,
@@ -17,6 +18,7 @@ export function useMenuSeparator(
   options: unstable_MenuSeparatorOptions,
   htmlProps: unstable_MenuSeparatorProps = {}
 ) {
+  options = unstable_useOptions("useMenuSeparator", options, htmlProps);
   htmlProps = useSeparator(options, htmlProps);
   htmlProps = unstable_useProps("useMenuSeparator", options, htmlProps);
   return htmlProps;

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { Portal } from "../Portal/Portal";
 import {
@@ -20,6 +21,7 @@ export function usePopoverBackdrop(
   options: unstable_PopoverBackdropOptions,
   htmlProps: unstable_PopoverBackdropProps = {}
 ) {
+  options = unstable_useOptions("usePopoverBackdrop", options, htmlProps);
   htmlProps = useDialogBackdrop(options, htmlProps);
   htmlProps = unstable_useProps("usePopoverBackdrop", options, htmlProps);
   return htmlProps;

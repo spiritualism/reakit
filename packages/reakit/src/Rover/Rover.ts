@@ -4,6 +4,7 @@ import {
   unstable_TabbableProps,
   useTabbable
 } from "../Tabbable/Tabbable";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
@@ -38,6 +39,8 @@ export function useRover(
   options: unstable_RoverOptions,
   htmlProps: unstable_RoverProps = {}
 ) {
+  options = unstable_useOptions("useRover", options, htmlProps);
+
   const ref = React.useRef<HTMLElement>(null);
   const id = unstable_useId("rover-");
   const stopId = options.stopId || id;

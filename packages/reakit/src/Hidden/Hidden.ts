@@ -1,5 +1,6 @@
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { Keys } from "../__utils/types";
@@ -14,6 +15,7 @@ export function useHidden(
   options: unstable_HiddenOptions = {},
   htmlProps: unstable_HiddenProps = {}
 ) {
+  options = unstable_useOptions("useHidden", options, htmlProps);
   htmlProps = mergeProps(
     {
       role: "region",

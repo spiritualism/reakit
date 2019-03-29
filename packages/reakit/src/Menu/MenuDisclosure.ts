@@ -1,5 +1,6 @@
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import {
   unstable_PopoverDisclosureOptions,
@@ -22,6 +23,8 @@ export function useMenuDisclosure(
   options: unstable_MenuDisclosureOptions,
   htmlProps: unstable_MenuDisclosureProps = {}
 ) {
+  options = unstable_useOptions("useMenuDisclosure", options, htmlProps);
+
   const [dir] = options.placement.split("-");
 
   htmlProps = mergeProps(

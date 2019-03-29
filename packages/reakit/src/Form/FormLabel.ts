@@ -2,6 +2,7 @@ import * as React from "react";
 import { As, PropsWithAs, Keys } from "../__utils/types";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
+import { unstable_useOptions } from "../system/useOptions";
 import { unstable_useProps } from "../system/useProps";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { DeepPath } from "./__utils/types";
@@ -28,6 +29,8 @@ export function unstable_useFormLabel<V, P extends DeepPath<V, P>>(
   options: unstable_FormLabelOptions<V, P>,
   htmlProps: unstable_FormLabelProps = {}
 ) {
+  options = unstable_useOptions("useFormLabel", options, htmlProps);
+
   htmlProps = mergeProps(
     {
       children: options.label,
