@@ -1,6 +1,7 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useOptions } from "../system/useOptions";
+import { unstable_useProps } from "../system/useProps";
 import { Keys } from "../__utils/types";
 
 export type unstable_BoxOptions = {
@@ -15,7 +16,8 @@ export function useBox(
   options: unstable_BoxOptions = {},
   htmlProps: unstable_BoxProps = {}
 ) {
-  htmlProps = unstable_useHook("useBox", options, htmlProps);
+  options = unstable_useOptions("useBox", options, htmlProps);
+  htmlProps = unstable_useProps("useBox", options, htmlProps);
   return htmlProps;
 }
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { unstable_RoverStateReturn, useRoverState } from "../Rover/RoverState";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useProps } from "../system/useProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
@@ -35,7 +35,7 @@ export function unstable_useFormRadioGroup<V, P extends DeepPath<V, P>>(
 ) {
   htmlProps = mergeProps({ role: "radiogroup" } as typeof htmlProps, htmlProps);
   htmlProps = unstable_useFormGroup(options, htmlProps);
-  htmlProps = unstable_useHook("useFormRadioGroup", options, htmlProps);
+  htmlProps = unstable_useProps("useFormRadioGroup", options, htmlProps);
   return htmlProps;
 }
 

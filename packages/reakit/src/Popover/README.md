@@ -19,7 +19,6 @@ import {
   PopoverHide,
   usePopoverState
 } from "reakit";
-import { A } from "reakit-system-bootstrap/components";
 
 function Example() {
   const focusInRef = React.useRef();
@@ -47,7 +46,6 @@ import {
   PopoverBackdrop,
   usePopoverState
 } from "reakit";
-import { A } from "reakit-system-bootstrap/components";
 
 function Example() {
   const focusInRef = React.useRef();

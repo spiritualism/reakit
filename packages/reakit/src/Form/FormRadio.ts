@@ -5,7 +5,7 @@ import {
   unstable_RadioProps,
   unstable_useRadio
 } from "../Radio/Radio";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useProps } from "../system/useProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
 import { As, PropsWithAs, Keys } from "../__utils/types";
@@ -55,7 +55,7 @@ export function unstable_useFormRadio<V, P extends DeepPath<V, P>>(
   );
 
   htmlProps = unstable_useRadio(allOptions, htmlProps);
-  htmlProps = unstable_useHook("useFormRadio", allOptions, htmlProps);
+  htmlProps = unstable_useProps("useFormRadio", allOptions, htmlProps);
   return htmlProps;
 }
 

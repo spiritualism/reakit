@@ -3,7 +3,8 @@ import { warning } from "../__utils/warning";
 import { unstable_createComponent } from "../utils/createComponent";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
 import { mergeProps } from "../utils/mergeProps";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useOptions } from "../system/useOptions";
+import { unstable_useProps } from "../system/useProps";
 import { Portal } from "../Portal/Portal";
 import {
   unstable_HiddenOptions,
@@ -86,7 +87,7 @@ export function useDialog(
   }: unstable_DialogOptions,
   htmlProps: unstable_DialogProps = {}
 ) {
-  const allOptions: unstable_DialogOptions = {
+  let allOptions: unstable_DialogOptions = {
     unstable_modal,
     unstable_hideOnEsc,
     unstable_hideOnClickOutside,
@@ -95,6 +96,8 @@ export function useDialog(
     unstable_autoFocusOnHide,
     ...options
   };
+  allOptions = unstable_useOptions("useDialog", allOptions, htmlProps);
+
   const dialog = React.useRef<HTMLElement>(null);
   const portal = usePortalRef(dialog, options.visible);
   const disclosure = useDisclosureRef(
@@ -174,7 +177,7 @@ export function useDialog(
   );
 
   htmlProps = useHidden(allOptions, htmlProps);
-  htmlProps = unstable_useHook("useDialog", allOptions, htmlProps);
+  htmlProps = unstable_useProps("useDialog", allOptions, htmlProps);
   return htmlProps;
 }
 

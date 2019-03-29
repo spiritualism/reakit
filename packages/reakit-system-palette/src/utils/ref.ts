@@ -1,4 +1,4 @@
-import { Palette } from "./__types";
+import { Palette } from "../__utils/types";
 import { getPalette } from "./getPalette";
 
 export function ref(name: string, fallback?: string) {

@@ -1,7 +1,8 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useOptions } from "../system/useOptions";
+import { unstable_useProps } from "../system/useProps";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { useLiveRef } from "../__utils/useLiveRef";
 import { Keys } from "../__utils/types";
@@ -55,11 +56,13 @@ export function useTabbable(
 ) {
   const clickKeysRef = useLiveRef(unstable_clickKeys);
 
-  const allOptions: unstable_TabbableOptions = {
+  let allOptions: unstable_TabbableOptions = {
     tabIndex,
     unstable_clickKeys,
     ...options
   };
+  allOptions = unstable_useOptions("useTabbable", allOptions, htmlProps);
+
   const reallyDisabled = options.disabled && !options.unstable_focusable;
 
   htmlProps = mergeProps(
@@ -94,7 +97,7 @@ export function useTabbable(
   );
 
   htmlProps = useBox(allOptions, htmlProps);
-  htmlProps = unstable_useHook("useTabbable", allOptions, htmlProps);
+  htmlProps = unstable_useProps("useTabbable", allOptions, htmlProps);
   return htmlProps;
 }
 

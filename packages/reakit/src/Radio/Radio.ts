@@ -1,7 +1,7 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useProps } from "../system/useProps";
 import {
   unstable_RoverOptions,
   unstable_RoverProps,
@@ -56,7 +56,7 @@ export function unstable_useRadio(
     htmlProps
   );
   htmlProps = useRover(options, htmlProps);
-  htmlProps = unstable_useHook("useRadio", options, htmlProps);
+  htmlProps = unstable_useProps("useRadio", options, htmlProps);
   return htmlProps;
 }
 

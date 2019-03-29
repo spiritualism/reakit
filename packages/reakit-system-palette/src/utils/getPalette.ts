@@ -1,4 +1,4 @@
-import { Palette } from "./__types";
+import { Palette } from "../__utils/types";
 
 export function getPalette(
   palette?: Palette,

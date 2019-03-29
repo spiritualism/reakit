@@ -1,7 +1,7 @@
 import { warning } from "../__utils/warning";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useProps } from "../system/useProps";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
 import { Keys } from "../__utils/types";
@@ -24,7 +24,7 @@ export function useTabList(
     htmlProps
   );
   htmlProps = useBox(options, htmlProps);
-  htmlProps = unstable_useHook("useTabList", options, htmlProps);
+  htmlProps = unstable_useProps("useTabList", options, htmlProps);
   return htmlProps;
 }
 

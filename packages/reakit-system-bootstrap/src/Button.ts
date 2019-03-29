@@ -3,26 +3,28 @@ import {
   unstable_ButtonProps,
   unstable_ButtonOptions
 } from "reakit/Button/Button";
-import { useBox } from "reakit-system-palette/system/useBox";
+import { useBoxProps } from "reakit-system-palette/Box";
 import { useDarken } from "reakit-system-palette/utils/useDarken";
-import { useFade } from "reakit-system-palette/utils/useFade";
-import { BootstrapBoxOptions } from "./useBox";
+import { BootstrapBoxOptions } from "./Box";
 
 export type BootstrapButtonOptions = BootstrapBoxOptions &
   unstable_ButtonOptions;
 
-export function useButton(
-  {
-    unstable_system: { opaque = true, palette = "primary", ...system } = {}
-  }: BootstrapButtonOptions,
+export function useButtonOptions({
+  unstable_system: { opaque = true, palette = "primary", ...system } = {},
+  ...options
+}: BootstrapButtonOptions) {
+  return { unstable_system: { opaque, palette, ...system }, ...options };
+}
+
+export function useButtonProps(
+  { unstable_system: system = {} }: BootstrapButtonOptions,
   { className, ...htmlProps }: unstable_ButtonProps = {}
 ) {
   const {
     style: { color, backgroundColor, borderColor = "transparent" }
-  } = useBox({ unstable_system: { opaque, palette, ...system } });
+  } = useBoxProps({ unstable_system: system });
 
-  // box without palette -> button with palette primary -> box with palette primary
-  // that's why box with palette primary is added after button with palette primary
   const button = css(
     {
       display: "inline-block",
@@ -38,22 +40,17 @@ export function useButton(
         "color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
       "&:hover": {
         borderColor: useDarken(
-          (opaque ? backgroundColor : color) || "#aaa",
+          (system.opaque ? backgroundColor : color) || "#aaa",
           0.2
         ),
         backgroundColor: useDarken(backgroundColor || "white", 0.1)
       },
       "&:active": {
         borderColor: useDarken(
-          (opaque ? backgroundColor : color) || "#aaa",
+          (system.opaque ? backgroundColor : color) || "#aaa",
           0.3
         ),
         backgroundColor: useDarken(backgroundColor || "white", 0.2)
-      },
-      "&:focus": {
-        outline: 0,
-        boxShadow: `0 0 0 0.2em
-        ${useFade((opaque ? backgroundColor : color) || "#aaa", 0.5)}`
       }
     },
     color && { color },

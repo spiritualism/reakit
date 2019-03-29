@@ -1,6 +1,6 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useProps } from "../system/useProps";
 import {
   unstable_RoverOptions,
   unstable_RoverProps,
@@ -20,7 +20,7 @@ export function useToolbarItem(
   htmlProps: unstable_ToolbarItemProps = {}
 ) {
   htmlProps = useRover(options, htmlProps);
-  htmlProps = unstable_useHook("useToolbarItem", options, htmlProps);
+  htmlProps = unstable_useProps("useToolbarItem", options, htmlProps);
   return htmlProps;
 }
 

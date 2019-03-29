@@ -1,7 +1,7 @@
 import * as React from "react";
 import { unstable_createComponent } from "../utils/createComponent";
 import { mergeProps } from "../utils/mergeProps";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useProps } from "../system/useProps";
 import { Keys } from "../__utils/types";
 import { useMenuItem } from "./MenuItem";
 import {
@@ -66,7 +66,7 @@ export function unstable_useMenuItemDisclosure(
   );
   htmlProps = useMenuItem({ stopId, ...parent }, htmlProps);
   htmlProps = useMenuDisclosure(options, htmlProps);
-  htmlProps = unstable_useHook("useMenuItemDisclosure", options, htmlProps);
+  htmlProps = unstable_useProps("useMenuItemDisclosure", options, htmlProps);
   return htmlProps;
 }
 

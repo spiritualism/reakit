@@ -1,6 +1,6 @@
 import * as React from "react";
 import { unstable_useToken } from "reakit/system/useToken";
-import { Palette } from "./__types";
+import { Palette } from "../__utils/types";
 import { getPalette } from "./getPalette";
 
 export function usePalette(name?: string, fallback?: string) {

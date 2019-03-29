@@ -6,5 +6,7 @@ export const palette = {
   success: "#28A745",
   info: "#17A2B8",
   warning: "#FFC107",
-  danger: "#DC3545"
+  danger: "#DC3545",
+  light: "#f8f9fa",
+  dark: "#343a40"
 };

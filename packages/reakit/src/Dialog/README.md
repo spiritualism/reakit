@@ -19,7 +19,6 @@ import {
   useDialogState,
   Button
 } from "reakit";
-import { A } from "reakit-system-bootstrap/components";
 
 function Example() {
   const focusInRef = React.useRef(null);
@@ -60,9 +59,6 @@ function Example() {
       >
         <Button onClick={dialog.hide}>X</Button>
         <DialogDisclosure {...dialog2}>Show Dialog 2</DialogDisclosure>
-        <A href="#" ref={focusInRef}>
-          Focus In
-        </A>
         <div style={{ height: 500 }}>Hi</div>
         <Dialog unstable_hideOnClickOutside={false} style={style} {...dialog2}>
           <div style={{ height: 500 }}>Hi</div>
@@ -83,7 +79,6 @@ import {
   useDialogState,
   Button
 } from "reakit";
-import { A } from "reakit-system-bootstrap/components";
 
 function Example() {
   const focusInRef = React.useRef(null);
@@ -123,9 +118,6 @@ function Example() {
       >
         <Button onClick={dialog.hide}>X</Button>
         <DialogDisclosure {...dialog2}>Show Dialog 2</DialogDisclosure>
-        <A href="#" ref={focusInRef}>
-          Focus In
-        </A>
         <Dialog style={style} {...dialog2}>
           Hi
         </Dialog>

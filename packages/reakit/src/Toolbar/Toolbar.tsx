@@ -2,7 +2,7 @@ import { warning } from "../__utils/warning";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useProps } from "../system/useProps";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { Keys } from "../__utils/types";
 import { unstable_ToolbarStateReturn, useToolbarState } from "./ToolbarState";
@@ -24,7 +24,7 @@ export function useToolbar(
     htmlProps
   );
   htmlProps = useBox(options, htmlProps);
-  htmlProps = unstable_useHook("useToolbar", options, htmlProps);
+  htmlProps = unstable_useProps("useToolbar", options, htmlProps);
   return htmlProps;
 }
 

@@ -2,7 +2,7 @@ import { warning } from "../__utils/warning";
 import { mergeProps } from "../utils/mergeProps";
 import { unstable_createComponent } from "../utils/createComponent";
 import { unstable_useCreateElement } from "../utils/useCreateElement";
-import { unstable_useHook } from "../system/useHook";
+import { unstable_useProps } from "../system/useProps";
 import { unstable_BoxOptions, unstable_BoxProps, useBox } from "../Box/Box";
 import { Keys } from "../__utils/types";
 import { useShortcuts } from "./__utils/useShortcuts";
@@ -42,7 +42,7 @@ export function unstable_useStaticMenu(
   );
 
   htmlProps = useBox(options, htmlProps);
-  htmlProps = unstable_useHook("useStaticMenu", options, htmlProps);
+  htmlProps = unstable_useProps("useStaticMenu", options, htmlProps);
   return htmlProps;
 }
 
