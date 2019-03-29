@@ -28,7 +28,7 @@ import * as system from "reakit-system-palette";
 
 const App = () => (
   <Provider unstable_system={system}>
-    <Button unstable_system={{ palette: "primary-300", opaque: true }}>
+    <Button unstable_system={{ palette: "primary", opaque: true }}>
       Button
     </Button>
   </Provider>

@@ -5,7 +5,7 @@ import { Keys } from "../__utils/types";
 
 export type unstable_BoxOptions = {
   /** Options passed to `reakit-system-*` */
-  unstable_system?: any;
+  unstable_system?: unknown;
 };
 
 export type unstable_BoxProps = React.HTMLAttributes<any> &

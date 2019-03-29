@@ -1,2 +1,1 @@
-export * from "./ref";
-export * from "./usePalette";
+export * from "./useStyle";
