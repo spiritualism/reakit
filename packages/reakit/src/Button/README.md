@@ -16,7 +16,11 @@ function Example() {
     <>
       <Button>Button</Button>
       <Button unstable_system={{ palette: "primary" }}>Button</Button>
+      <Button unstable_system={{ palette: "primary" }}>Button</Button>
       <Button unstable_system={{ palette: "secondary" }}>Button</Button>
+      <Button unstable_system={{ palette: "secondary", opaque: true }}>
+        Button
+      </Button>
       <Button unstable_system={{ palette: "success" }}>Button</Button>
       <Button unstable_system={{ palette: "info" }}>Button</Button>
       <Button unstable_system={{ palette: "warning" }}>Button</Button>
